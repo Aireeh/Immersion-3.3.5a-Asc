@@ -163,11 +163,12 @@ end
 TexturePool_Hide = FramePool_Hide
 local TexturePool_HideAndClearAnchors = FramePool_HideAndClearAnchors
 
-function CreateTexturePool(parent, layer, subLayer, textureTemplate, resetterFunc)
-	local texturePool = CreateFromMixins(TexturePoolMixin)
-	texturePool:OnLoad(parent, layer, subLayer, textureTemplate, resetterFunc or TexturePool_HideAndClearAnchors)
-	return texturePool
-end
+-- This breaks the mystic enchant / skillcard UI
+--function CreateTexturePool(parent, layer, subLayer, textureTemplate, resetterFunc)
+--	local texturePool = CreateFromMixins(TexturePoolMixin)
+--	texturePool:OnLoad(parent, layer, subLayer, textureTemplate, resetterFunc or TexturePool_HideAndClearAnchors)
+--	return texturePool
+--end
 
 local FontStringPoolMixin = CreateFromMixins(ObjectPoolMixin)
 
