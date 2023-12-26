@@ -155,15 +155,35 @@ function Frame:HandleGossipQuestOverlap(event)
 		end
 	end
 end
-
 function Frame:HandleGossipOpenEvent(kit)
 --	if not self.gossipHandlers[kit] then
 --		self:SetBackground(kit)
 	self:UpdateTalkingHead(API:GetUnitName('npc'), API:GetGossipText(), 'GossipGossip')
-	if not L('gossipmode') and self:IsGossipAvailable() then
-		self:PlayIntro('GOSSIP_SHOW')
-	else
-		self:PlayIntro('GOSSIP_SHOW')
+	
+	local blacklistNPC = {
+	["Silas Darkmoon"] = true,
+	["Burth"] = true,
+	["Professor Thaddeus Paleo"] = true, -- API:GetUnitName('npc') cannot get unit name and is therefore not hidden
+	["Chromie"] = true,
+	["Stony Tark"] = true,
+	-- Callboards
+	["Hero's Call Board"] = true,
+	["Warchief's Command Board"] = true,
+	["Outlaw's Contract Board"] = true,
+	-- PvP Ruleset
+	["Battlemaster Tressa"] = true,
+	["Blood Keeper Rozok"] = true,
+	["Theresa"] = true,
+	-- Etherals
+	["Marazz"] = true,
+	["Ameer Greatluck"] = true, -- API:GetUnitName('npc') cannot get unit name and is therefore not hidden
+	}
+	if not blacklistNPC[API:GetUnitName('npc')] then
+		if not L('gossipmode') and self:IsGossipAvailable() then
+			self:PlayIntro('GOSSIP_SHOW')
+		else
+			self:PlayIntro('GOSSIP_SHOW')
+		end
 	end
 --	end
 end
