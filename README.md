@@ -37,5 +37,5 @@ Immersion is a replacement for the dated quest & gossip frames. [(full version)]
 
 #### Source
 - <b>original-author</b>: [MunkDev](https://github.com/seblindfors)
-- <b>backport-author</b>: [s0high](https://github.com/s0h2x)
+- <b>backport-author</b>: [s0high](https://github.com/s0h2x) [Discord](https://discord.gg/xpmAYHdzAm)
 - <b>project-web</b>: [curseforge](https://www.curseforge.com/wow/addons/immersion)
